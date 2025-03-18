@@ -38,4 +38,4 @@ const app = Vue.createApp({
     }
 });
 
-app.mount("#main");
+app.mount("#app");
