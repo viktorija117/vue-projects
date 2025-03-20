@@ -12,17 +12,18 @@
 <body>
     <div id="app" class="container">
         <h1><i class="fa-solid fa-cloud"></i> Vremenska prognoza</h1>
+        
         <form @submit.prevent="fetchWeather" action="" class="city-form">
             <input v-model="city" @keyup.enter="fetchWeather" type="text" id="grad" placeholder="Unesite grad">
-            <button @click="fetchWeather" type="submit">Pretraži</button>
+            <button @click="fetchWeather" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Pretraži</button>
         </form>
 
         <!-- Prikaz podataka o vremenu -->
         <div v-if="weather" class="container">
             <h2>{{ weather.name }}, {{ weather.sys.country }}</h2>
-            <p>🌡 Temperatura: {{ weather.main.temp }}°C</p>
-            <p>💨 Vetar: {{ weather.wind.speed }} m/s</p>
-            <p>📌 Opis: {{ weather.weather[0].description }}</p>
+            <p><i class="fa-solid fa-temperature-three-quarters"></i> Temperatura: {{ weather.main.temp }}°C</p>
+            <p><i class="fa-solid fa-wind"></i> Vetar: {{ weather.wind.speed }} m/s</p>
+            <p><i class="fa-solid fa-map-pin"></i> Opis: {{ weather.weather[0].description }}</p>
         </div>
 
         <!-- Prikaz poruke ako dođe do greške -->
